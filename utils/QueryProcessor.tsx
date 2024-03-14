@@ -13,7 +13,7 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
-  const regex = /what is (\d+) \+ (\d+)/;
+  const regex = /What is (\d+) plus (\d+)/;
 
   const match = query.match(regex);
   
