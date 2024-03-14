@@ -13,6 +13,15 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  if (query.toLowerCase().includes("What is (\d+) plus (\d+)\?")) {
+    const number1 = parseInt(query[1], 10);
+    const number2 = parseInt(query[2], 10);
+    const sum = number1+number2
+    return (
+      sum.toString()
+    );
+  }
+
 
   return "";
 }
