@@ -103,6 +103,20 @@ export default function QueryProcessor(query: string): string {
     return sum.toString();
   }
 
+  const regex7 = /What is (\d+) to the power of (\d+)?/;
+
+  const match7 = query.match(regex7);
+  
+  if (match7) {
+    // Extract numbers from the regex groups and calculate the sum
+    const number1 = parseInt(match7[1], 10);
+    const number2 = parseInt(match7[2], 10);
+    const sum = Math.pow(number1, number2);
+
+    // Return the sum as a string
+    return sum.toString();
+  }
+
 
   return "";
 }
