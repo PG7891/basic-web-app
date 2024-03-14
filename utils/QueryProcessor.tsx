@@ -31,7 +31,7 @@ export default function QueryProcessor(query: string): string {
 
   const match2 = query.match(regex2);
   
-  if (match) {
+  if (match2) {
     // Extract numbers from the regex groups and calculate the sum
     const number1 = parseInt(match2[1], 10);
     const number2 = parseInt(match2[2], 10);
@@ -46,7 +46,7 @@ export default function QueryProcessor(query: string): string {
 
   const match3 = query.match(regex3);
   
-  if (match) {
+  if (match3) {
     // Extract numbers from the regex groups and calculate the sum
     const number1 = parseInt(match3[1], 10);
     const number2 = parseInt(match3[2], 10);
