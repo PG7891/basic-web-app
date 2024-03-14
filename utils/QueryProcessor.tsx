@@ -13,6 +13,21 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
+  const regex5 = /What is (\d+) plus (\d+) plus (\d+)?/;
+
+  const match5 = query.match(regex5);
+  
+  if (match5) {
+    // Extract numbers from the regex groups and calculate the sum
+    const number1 = parseInt(match5[1], 10);
+    const number2 = parseInt(match5[2], 10);
+    const number3 = parseInt(match5[3], 10);
+    const sum = number1 + number2 + number3;
+
+    // Return the sum as a string
+    return sum.toString();
+  }
+
   const regex = /What is (\d+) plus (\d+)?/;
 
   const match = query.match(regex);
@@ -72,21 +87,6 @@ export default function QueryProcessor(query: string): string {
 
     // Return the sum as a string
 
-  }
-
-  const regex5 = /What is (\d+) plus (\d+) plus (\d+)?/;
-
-  const match5 = query.match(regex5);
-  
-  if (match5) {
-    // Extract numbers from the regex groups and calculate the sum
-    const number1 = parseInt(match5[1], 10);
-    const number2 = parseInt(match5[2], 10);
-    const number3 = parseInt(match5[3], 10);
-    const sum = number1 + number2 + number3;
-
-    // Return the sum as a string
-    return sum.toString();
   }
 
   const regex6 = /What is (\d+) minus (\d+)?/;
