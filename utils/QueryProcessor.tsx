@@ -13,7 +13,7 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
-  const regex = /What is (\d+) plus (\d+)/;
+  const regex = /What is (\d+) plus (\d+)?/;
 
   const match = query.match(regex);
   
@@ -26,6 +26,22 @@ export default function QueryProcessor(query: string): string {
     // Return the sum as a string
     return sum.toString();
   }
+
+  const regex2 = /Which of the following numbers is the largest: (\d+), (\d+), (\d+)?/;
+
+  const match2 = query.match(regex);
+  
+  if (match) {
+    // Extract numbers from the regex groups and calculate the sum
+    const number1 = parseInt(match2[1], 10);
+    const number2 = parseInt(match2[2], 10);
+    const number3 = parseInt(match2[3], 10);
+    const sum = number1 + number2;
+
+    // Return the sum as a string
+    return sum.toString();
+  }
+
 
 
   return "";
