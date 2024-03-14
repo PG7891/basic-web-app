@@ -29,7 +29,7 @@ export default function QueryProcessor(query: string): string {
 
   const regex2 = /Which of the following numbers is the largest: (\d+), (\d+), (\d+)?/;
 
-  const match2 = query.match(regex);
+  const match2 = query.match(regex2);
   
   if (match) {
     // Extract numbers from the regex groups and calculate the sum
@@ -44,7 +44,7 @@ export default function QueryProcessor(query: string): string {
 
   const regex3 = /What is (\d+) multiplied by (\d+)?/;
 
-  const match3 = query.match(regex);
+  const match3 = query.match(regex3);
   
   if (match) {
     // Extract numbers from the regex groups and calculate the sum
