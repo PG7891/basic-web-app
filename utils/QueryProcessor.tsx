@@ -63,7 +63,11 @@ export default function QueryProcessor(query: string): string {
   if (match4) {
     for(let i = 1; i < 8; i++){
       const number = parseInt(match4[i], 10);
-
+      const squareRoot = Math.sqrt(number);
+      const cubeRoot = Math.cbrt(number);
+      if(squareRoot === Math.round(squareRoot) && cubeRoot === Math.round(cubeRoot)){
+        return number.toString();
+      }
     }
 
     // Return the sum as a string
