@@ -13,13 +13,18 @@ export default function QueryProcessor(query: string): string {
     );
   }
 
-  if (query.toLowerCase().includes("What is (\d+) plus (\d+)\?")) {
-    const number1 = parseInt(query[1], 10);
-    const number2 = parseInt(query[2], 10);
-    const sum = number1+number2
-    return (
-      sum.toString()
-    );
+  const regex = /what is (\d+) \+ (\d+)/;
+
+  const match = query.match(regex);
+  
+  if (match) {
+    // Extract numbers from the regex groups and calculate the sum
+    const number1 = parseInt(match[1], 10);
+    const number2 = parseInt(match[2], 10);
+    const sum = number1 + number2;
+
+    // Return the sum as a string
+    return sum.toString();
   }
 
 
