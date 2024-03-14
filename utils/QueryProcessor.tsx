@@ -89,6 +89,19 @@ export default function QueryProcessor(query: string): string {
     return sum.toString();
   }
 
+  const regex6 = /What is (\d+) minus (\d+)?/;
+
+  const match6 = query.match(regex6);
+  
+  if (match6) {
+    // Extract numbers from the regex groups and calculate the sum
+    const number1 = parseInt(match6[1], 10);
+    const number2 = parseInt(match6[2], 10);
+    const sum = number1 - number2;
+
+    // Return the sum as a string
+    return sum.toString();
+  }
 
 
   return "";
