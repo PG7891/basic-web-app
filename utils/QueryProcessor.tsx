@@ -36,7 +36,21 @@ export default function QueryProcessor(query: string): string {
     const number1 = parseInt(match2[1], 10);
     const number2 = parseInt(match2[2], 10);
     const number3 = parseInt(match2[3], 10);
-    const sum = number1 + number2;
+    const sum = Math.max(number1, number2, number3)
+
+    // Return the sum as a string
+    return sum.toString();
+  }
+
+  const regex3 = /What is (\d+) multiplied by (\d+)?/;
+
+  const match3 = query.match(regex);
+  
+  if (match) {
+    // Extract numbers from the regex groups and calculate the sum
+    const number1 = parseInt(match3[1], 10);
+    const number2 = parseInt(match3[2], 10);
+    const sum = number1 * number2;
 
     // Return the sum as a string
     return sum.toString();
